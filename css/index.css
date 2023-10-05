@@ -244,6 +244,10 @@ hr {
 
 }
 
+.section--clients {
+    background: url(/images/cl-bg.jpg) center no-repeat;
+    background-size: cover;
+}
 .section__header {
     width: 100%;
     max-width: 950px;
@@ -661,4 +665,111 @@ hr {
 .logo__partners {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+/*-------------------------------------Works---------------------------*/
+.works {
+    display: flex;
+}
+
+.works__col {
+    flex: 1 1 0;
+}
+
+.works__item {
+    position: relative;
+
+    background: linear-gradient(to bottom, #f38181, #fce38a);
+}
+
+.works__item:hover .works__img {
+    opacity: 0.1;
+}
+
+.works__item:hover .works__info {
+    opacity: 1;
+}
+
+.works__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    transition: opacity 0.2s linear;
+}
+
+.works__info {
+    width: 100%;
+    padding: 0 15px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    text-align: center;
+    color: #fff;
+
+    transform: translate3d(0, -50%, 0);
+    transition: opacity 0.2s linear;
+}
+
+.works__title {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.works__text {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+/*---------------------------------------Clients------------------------*/
+
+.clients {
+    margin-top: 85px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.clients__item {
+    width: 50%;
+    margin-bottom: 60px;
+    padding: 0 45px 0 175px;
+    position: relative;
+}
+
+.clients__img {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 1;
+    border-radius: 50%;
+}
+
+.clients__name  {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+.clients__prof  {
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.clients__text {
+    font-size: 15px;
+    color: #333;
+}
+
+.clients__text:before {
+    content: "";
+    margin: 15px 0;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #f38181;
 }
