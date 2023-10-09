@@ -288,40 +288,50 @@ hr {
 
 /*----------------------About-------------------------*/
 
-.about {
-    margin-top: 80px;
+.card {
+    margin-top: 80px -15px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     
 }
 
-.about__item {
+.card__item {
+    
+    width: 33.3333%;
+    padding: 0 15px;
+    
+}
+
+.card__inner {
     position: relative;
-    width: 380px;
     background-color: #95e1d3;
 }
-.about__item:hover .about__text {
+
+.card__item:hover .card__text {
     opacity: 1;
 
 }
 
-.about__item:hover .about__img {
+.card__item:hover .card__img {
     transform: translate3d(-10px, -10px, 0);
 }
 
-.about__item:hover .about__img img {
+.card__item:hover .card__img img {
     opacity: 0.1 ;
 }
-.about__img {
+.card__img {
     background: linear-gradient(to bottom, #f38181, #fce38a);
     transition: transform 0.2s linear;
 }
-.about__img img {
+.card__img img {
     display: block;
+    max-width: 100%;
+    height: auto;
     transition: opacity 0.1s linear;
 }
 
-.about__text {
+.card__text {
     width: 100%;
     font-size: 18px;
     color: #fff;
@@ -346,6 +356,7 @@ hr {
 
 .stat {
     display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -377,15 +388,19 @@ hr {
 
 .services {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .services__item {
-    flex: 1 1 0;
-    padding-left: 80px;
-    padding-right: 25px;
+    width: 33.33333%;;
+    padding: 0 25px 40px 80px;
     position: relative;
+    margin-bottom: 40px;
 }
 
+.services__item--border{
+    border-bottom: 1px solid #e5e5e5;
+}
 .services__icon {
     position: absolute;
     top: 0;
@@ -418,10 +433,12 @@ hr {
 
 .devices__item {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .devices__item--iphone {
-    position: absolute;
+       position: absolute;
     bottom: -70px;
     right: 20px;
     z-index: 1;
@@ -431,10 +448,19 @@ hr {
 
 .wedo {
     display: flex;
+    flex-wrap: wrap;
+    max-width: 0 -15px;
+}
+
+.wedo__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .wedo__item {
     width: 50%;
+    margin: 0 15px;
 }
 /*----------------------------Accordion------------------------------*/
 
@@ -553,64 +579,6 @@ hr {
 }
 
 /*----------------------------------Team--------------------------------*/
-
-.team {
-    margin-top: 80px;
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-.team__item {
-    
-    width: 380px;
-    
-}
-
-.team__inner {
-    position: relative;
-    background-color: #95e1d3;
-}
-
-.team__inner:hover .team__text {
-    opacity: 1;
-
-}
-
-.team__inner:hover .team__img {
-    transform: translate3d(-10px, -10px, 0);
-}
-
-.team__inner:hover .team__img img {
-    opacity: 0.1 ;
-}
-.team__img {
-    background: linear-gradient(to bottom, #f38181, #fce38a);
-    transition: transform 0.2s linear;
-}
-.team__img img {
-    display: block;
-    transition: opacity 0.1s linear;
-}
-
-.team__text {
-    width: 100%;
-    font-size: 18px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 700;
-    text-align: center;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    z-index: 2;
-    transform: translate3d(0, -50%, 0);
-    transition: opacity 0.2s linear;
-   
-}
-
-
 
 .team__info {
     margin-top: 20px;
@@ -1090,9 +1058,9 @@ hr {
 
 
 @media (max-width: 1230px) {
-
+    /*------Intro-----*/
     .intro__suptitle {
-        font-size: 50px;
+        font-size: 52px;
     }
 
     .intro__title {
@@ -1102,12 +1070,151 @@ hr {
 }
 
 @media (max-width: 990px) {
-
+    /*------Intro-----*/
     .intro__suptitle {
-        font-size: 35px;
+        font-size: 32px;
     }
 
     .intro__title {
         font-size: 80px;
     }
+
+    /*------------Statistics-----------------*/
+    .stat {
+        justify-content: center;
+
+    }
+    
+    .stat__item {
+        flex: none;
+        width: 33.33333%;
+        border: 0;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .stat__item:last-child {
+        border-right: 0;
+    }
+
+    /*-----------Services------------------*/
+    .services__item {
+        width: 50%;
+        padding-bottom: 0;
+    }
+
+    .services__item--border {
+        border-bottom: 0;
+    }
 }
+
+
+
+@media (max-width: 770px) {
+    /*--------------navigation----------------*/
+    .nav {
+        display: none;
+    }
+
+    /*-------------Section-------------------*/
+
+    .section {
+        padding: 40px 0;
+    }
+    
+    /*--------------Slider-------------------*/
+    .slider__text {
+        display: none;
+    }
+
+    .intro__lower-item.active:before {
+        width: 50%;
+    }
+
+    /*--------------Card----------------*/
+    .card {
+        margin-top: 50px;
+        justify-content: center;
+    }
+    .card__item {
+        width: 100%;
+        max-width: 410px;
+        margin-bottom: 30px;
+    }
+
+    .card__item:last-child {
+        margin-bottom: 0px;
+    }
+
+    /*-----------Services------------------*/
+    .services{
+        justify-content: center;
+    }
+    .services__item {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /*------------------wedo--------------------*/
+    .wedo__item {
+        width: 100%;
+    }
+    .wedo__img {
+        display: none;
+    }
+}
+@media (max-width: 575px) {
+    /*------Intro-----*/
+    .intro__suptitle {
+        font-size: 22px;
+    }
+
+    .intro__title {
+        font-size: 40px;
+    }
+
+    /*-------------Section-------------------*/
+
+    .section__header {
+        margin-bottom: 50px;
+    }
+
+    .section__title {
+        font-size: 24px;
+    }
+
+    .section__suptitle {
+        font-size: 20px;
+    }
+
+    .section__title:after {
+        margin: 20px 0;
+    }
+
+    /*------------Statistics-----------------*/
+        
+    .stat__item {
+       width: 100%;
+       border-bottom: 1px solid #b5eae0 ;
+    }
+
+   .stat__item:last-child {
+    border-bottom: 0;
+   }
+
+   .stat__number {
+    font-size: 50px ;
+   }
+
+   /*---------------Devices-------------------*/
+
+   .devices {
+    max-width: 320px;
+   }
+
+   .devices__item--iphone {
+    width: 180px;
+   }
+
+}
+
