@@ -30,8 +30,9 @@ hr {
 /*------------------Container-------------------------*/
 .container {
     width: 100%;
-    max-width: 1200px;  
+    max-width: 1230px;  
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /*----------------Intro----------------------------- */
@@ -1085,4 +1086,28 @@ hr {
 
 .copyright span {
     color: #f38181;
+}
+
+
+@media (max-width: 1230px) {
+
+    .intro__suptitle {
+        font-size: 50px;
+    }
+
+    .intro__title {
+        font-size: 90px;
+    }
+
+}
+
+@media (max-width: 990px) {
+
+    .intro__suptitle {
+        font-size: 35px;
+    }
+
+    .intro__title {
+        font-size: 80px;
+    }
 }
