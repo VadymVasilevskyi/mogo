@@ -107,7 +107,7 @@ hr {
     align-items: center;
 }
 .nav {
-    font-size: 15px;
+    font-size: 12px;
     
     text-transform: uppercase;
 
@@ -901,7 +901,7 @@ hr {
 
 .footer {
     padding-top: 65px;
-    background-color: #fce38a;
+    background-color:#95e1d3;
 }
 
 .footer__inner {
@@ -976,6 +976,19 @@ hr {
 
 .footer__instagram {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.instagram__item {
+    width: 30.333%;
+    border-bottom: 1px solid transparent;
+    
+    
+}
+
+.instagram__item img {
+    display: block;
 }
 
 /*------------------------Subscribe----------------------*/
@@ -1063,3 +1076,13 @@ hr {
     color: #999;
 }
 
+.copyright {
+    padding: 20px 0;
+    border-top: 1px solid #e5e5e5;
+    text-align: center;
+    font-size: 14px;
+}
+
+.copyright span {
+    color: #f38181;
+}
