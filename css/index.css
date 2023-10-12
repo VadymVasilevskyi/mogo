@@ -42,6 +42,8 @@ hr {
     justify-content: center;
     width: 100%;
     height: 100vh;
+    min-height: 820px;
+    position: relative;
 
     background: url(../images/bg2.jpg), center no-repeat;
     background-size: cover;
@@ -92,6 +94,24 @@ hr {
     top: 0;
     left: 0;
     z-index: 10;
+
+}
+
+.header.fixed {
+    
+    background-color: #370ea0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    transform: translate3d( 0, 0, 0 );
+}
+
+.header.active {
+    background-color: #370ea0;
 
 }
 .logo {
@@ -152,6 +172,82 @@ hr {
     color: #fce38a;
 }
 
+/*--------------------Nav-toggle--------------------*/
+.nav-toggle {
+    width: 30px;
+    padding: 10px 0;
+
+    font-size: 0;
+    color: transparent;
+    position: absolute;
+    display: none;
+
+    border: 0;
+    background: none;
+    cursor: pointer;
+    top: 24px;
+    right: 24px;
+    z-index: 1;
+    
+}
+
+.nav-toggle__item {
+    width: 100%;
+    height: 3px;
+    background-color: #ccc;
+    display: block;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    transition: background 0.2s linear;
+   
+
+}
+
+.nav-toggle.active .nav-toggle__item{
+    background: none;
+
+}
+
+
+
+.nav-toggle__item:before,
+.nav-toggle__item:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    position: absolute;
+    background-color: #ccc;
+    left: 0;
+    z-index: 1;
+
+    transition: transform 0.2s linear;
+}
+
+.nav-toggle__item:before {
+    top: 8px;
+}
+
+.nav-toggle__item:after {
+    top: -8px;
+}
+
+.nav-toggle.active 
+.nav-toggle__item:before {
+    transform-origin: left top;
+    transform: rotate(45deg) translateX0(-2px);
+}
+
+.nav-toggle.active 
+.nav-toggle__item:after {
+    transform-origin: left bottom;
+    transform: rotate(-45deg) translateX(-3px);
+}
 /*---------------------Button-------------------------*/
 
 .btn {
@@ -1189,9 +1285,39 @@ hr {
 
 
 @media (max-width: 770px) {
+
+    /*-----------------Intro----------------*/
+    .intro {
+        min-height: 650px;
+       }
+    
+    /*---------------Header--------------------*/
+    .header {
+        padding: 10px 0;
+    }
+
+    
+    
+
     /*--------------navigation----------------*/
     .nav {
         display: none;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+
+        background-color: #370ea0;
+    }
+
+    .nav__link {
+        display: block;
+        margin: 0;
+        padding: 8px 20px ;
+    }
+
+    .nav-toggle {
+        display: block;
     }
 
     /*-------------Section-------------------*/
@@ -1295,6 +1421,8 @@ hr {
 
 @media (max-width: 575px) {
     /*------Intro-----*/
+   
+  
     .intro__suptitle {
         font-size: 22px;
     }
@@ -1375,6 +1503,16 @@ hr {
      .clients__text:before {
         margin: 15px auto;
      }
+     /*----------------------------Blogs-----------------------*/
+     .blogs__img {
+        width: 80px;
+        height: 50px;
+     }
+
+     .blogs__title {
+        font-size: 10px;
+     }
+
      /*-----------------------------Subscribe---------------------*/
      .subscribe {
         flex-wrap: wrap;
